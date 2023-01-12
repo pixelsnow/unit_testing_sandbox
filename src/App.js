@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
+import "./App.css";
+
+export default function App() {
+  const [username, setUsername] = useState("");
+  const [updated, setUpdated] = useState(username);
+
+  const handleClick = () => {
+    console.log("button works!");
+    setUpdated(username);
+  };
+
+  const handleChange = (e) => {
+    setUsername(e.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        onChange={handleChange}
+        value={username}
+      />
+      <h2>Username: {username}</h2>
+      <h2>Updated: {updated}</h2>
+      <button onClick={handleClick}>Submit</button>
     </div>
   );
 }
-
-export default App;
