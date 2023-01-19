@@ -9,6 +9,11 @@ export default function App() {
   const handleClick = () => {
     console.log("button works!");
     setUpdated(username);
+    if (username.length < 3) {
+      console.log("username too short");
+    } else if (username.length > 20) {
+      console.log("username too long");
+    }
   };
 
   const handleChange = (e) => {
