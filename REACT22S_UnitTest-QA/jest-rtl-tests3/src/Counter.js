@@ -1,5 +1,5 @@
 // from https://github.com/mwaz/jest-snapshot-testing
-// https://circleci.com/blog/snapshot-testing-with-jest/
+// https://circleci.com/blog/snapshot-testing-with-jest/ 
 
 import React from "react";
 
@@ -25,7 +25,7 @@ class Counter extends React.Component {
     // <h1>COUNTER</h1>
     return (
       <div className="counter">
-        <h1>Counter</h1>
+       
         <div className="buttons">
           <button onClick={this.increment}>Increment</button>
           <button onClick={this.decrement}>Decrement</button>
